@@ -1,0 +1,46 @@
+@import "https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap";
+
+body {
+  overflow-x: hidden;
+}
+
+.imgProductos {
+  align-content: center;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin-top: 1rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.card-text {
+  color: rgb(104, 101, 101);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.card-title {
+  color: rgb(48, 47, 47);
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+h2 {
+  margin: 2rem 0.5rem 0.5rem 2rem;
+}
+
+.btn {
+  margin: 2rem 0rem 0rem 2rem;
+}
+
+#login {
+  margin: 3rem 2rem 0.5rem 64rem;
+}
