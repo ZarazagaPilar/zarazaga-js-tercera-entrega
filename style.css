@@ -3,15 +3,13 @@
 body {
   overflow-x: hidden;
 }
-
 .imgProductos {
   align-content: center;
-  width: 150px;
-  height: 150px;
+  width: 30%;
+  height: auto;
   object-fit: contain;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
-
 .card {
   display: flex;
   align-items: center;
@@ -34,13 +32,158 @@ body {
 }
 
 h2 {
-  margin: 2rem 0.5rem 0.5rem 2rem;
+  margin: 1rem 0.5rem 0.5rem 1rem;
 }
 
+h3 {
+  font-size: large;
+  font-weight: 300;
+  margin: 1rem 0.5rem 0.5rem 1rem;
+}
 .btn {
-  margin: 2rem 0rem 0rem 2rem;
+  margin: 0.5rem 0rem 0rem 0.5rem;
 }
 
 #login {
   margin: 3rem 2rem 0.5rem 64rem;
 }
+
+#resumenCarrito {
+  display: none;
+}
+/*****************************************/
+
+/* header */
+/* nav bar */
+/*****************/
+header {
+  overflow-x: hidden;
+}
+
+.navbarHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logokanusPrincipal {
+  background-color: rgb(255, 255, 255);
+  width: 90%;
+  height: auto;
+}
+
+.navbarleft {
+  display: flex;
+  text-align: right;
+}
+
+.listaNav {
+  display: flex;
+  list-style-type: none;
+  position: relative;
+}
+
+.navbar {
+  padding: 8px;
+  padding-left: 20px;
+  margin-right: 15px;
+}
+
+.navbarDes {
+  color: rgb(134, 134, 134);
+  font-size: 15px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* iconos Navbar */
+/*****************/
+.fa-solid {
+  color: rgb(134, 134, 134);
+  font-size: 160%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.fa-solid:hover {
+  color: rgb(56, 55, 55);
+}
+
+.fa-cart-shopping {
+  margin-right: 15px;
+}
+
+.fa-user-doctor {
+  margin-right: 15px;
+}
+
+.fa-user-group {
+  margin-right: 10px;
+}
+
+/* FOOTER*/
+/*********/
+.fotterPrincipal {
+  border-top: 1px solid #999999;
+  background-color: rgb(255, 255, 255);
+  font-family: "Roboto", sans-serif;
+  color: rgb(39, 38, 38);
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 1% 2% 1%;
+  margin: 3% 0% 0% 0%;
+  font-weight: bold;
+}
+
+.lifooter {
+  list-style-type: none;
+  margin-right: 15%;
+  margin-bottom: 1%;
+}
+
+.lifooterHorario {
+  list-style-type: none;
+  margin-right: 30px;
+  font-weight: bold;
+}
+
+
+
+
+/*SOLO SMARTPHONE - TABLET*/
+/*****************/
+@media (max-width: 767px) {
+ 
+  .googlemapsImg {
+    scale: 90%;
+  }
+}
+/********************************/
+
+.googlemapsResponsive {
+  overflow: hidden;
+  padding-bottom: 60%;
+  position: relative;
+  height: 0;
+}
+.googlemapsResponsive iframe {
+  left: 0.5%;
+  right: 10%;
+  top: 10%;
+  bottom: 10%;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+

@@ -1,18 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-<link rel="stylesheet" href="style.css">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description"
+        content="Kanus Centro Médico Veterinario, atención veterionaria de pequeños animales (caninos y felinos)">
+    <meta name="keywords" content="veterinaria, medicina, caninos, felinos">
+    <title>Kanus Veterinaria</title>
     <!-- vinculo Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <!-- favicon favorites icon -->
+    <link rel="shortcut icon" href="img/logo-kanus-gris-redondo.jpg">
+    <!-- vinculo CSS style -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body class="container">
+<body class="container"></body>
+<!-- HEADER -->
+<header>
+    <nav class="navbar navbar-expand-lg navbarHeader">
+        <div class="container-fluid">
+            <!-- LOGO -->
+            <a class="navbar-brand" href="index.html" title="Kanus"><img src="./img/logo--blanco-letras.jpg"
+                    alt="Logo kanus" class="logokanusPrincipal img-fluid mx-auto"></a>
+            <button class="navbar-toggler ms-auto mt-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--  NAVBAR  -->
+            <div class="collapse navbar-collapse navbarleft" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 listaNav">
+                    <li class="nav-item navbar">
+                        <a class="nav-link active" aria-current="page" href="index.html"><i
+                                class="fa-solid fa-house d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">INICIO</p>
+                        </a>
+                    </li>
+                    <li class="nav-item navbar">
+                        <a class="nav-link" href="html/nuestraclinica.html"><i
+                                class="fa-solid fa-hospital d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">CLÍNICA</p>
+                        </a>
+                    </li>
+                    <li class="nav-item navbar">
+                        <a class="nav-link" href="html/servicios.html"><i
+                                class="fa-solid fa-user-doctor d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">SERVICIOS</p>
+                        </a>
+                    </li>
+                    <li class="nav-item navbar">
+                        <a class="nav-link" href="html/compras.html"><i
+                                class="fa-solid fa-cart-shopping d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">COMPRAS</p>
+                        </a>
+                    </li>
+                    <li class="nav-item navbar">
+                        <a class="nav-link" href="html/blog.html"><i
+                                class="fa-solid fa-newspaper d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">BLOG</p>
+                        </a>
+                    </li>
+                    <li class="nav-item navbar">
+                        <a class="nav-link" href="html/contacto.html"><i
+                                class="fa-solid fa-user-group d-none d-sm-none d-md-none d-lg-block"></i>
+                            <p class="navbarDes">CONTACTO</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
     <button class="btn btn-warning" id="login">Ingresar</button>
     <h1 class="text-center">SHOP</h1>
     <hr>
@@ -24,7 +85,58 @@
     <button class="btn btn-success" id="verCarrito">Ver carrito</button>
     <button class="btn btn-danger" id="vaciarCarrito">Vaciar Carrito</button>
     <div id="contenedorCarrito" class="row"></div>
-
+    <div id="resumenCarrito"></div>
+      
+     <!--  FOOTER   -->
+     <footer>
+        <div class="fotterPrincipal conteiner fluid">
+            <div class="fotterServicios row">
+                <div class="phone col-xs-12 col-md-6 col-lg-3">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <ul>
+                        <li class="lifooter">0351-4821652</li>
+                        <li class="lifooter">0351-8947165</li>
+                        <li class="lifooter">0351-153495886</li>
+                    </ul>
+                </div>
+                <div class="schedule col-xs-12 col-md-6 col-lg-3">
+                    <i class="fa fa-clock-o" aria-hidden="true"></i>
+                    <ul>
+                        <li class="lifooterHorario">HORARIOS</li>
+                        <li class="lifooter">Lunes a viernes de 9 a 21 h</li>
+                        <li class="lifooter">Sabados de 9 a 14 h</li>
+                    </ul>
+                </div>
+                <!-- PONT SOLO PARA TABLET Y ESCRITORIO -->
+                <div class="location col-xs-12 col-md-6 col-lg-3 d-none d-sm-none d-md-block">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <ul>
+                        <li class="lifooter">Fader 3571</li>
+                        <li class="lifooter">Córdoba-Argentina</li>
+                    </ul>
+                </div>
+                <!-- GOOGLE MAPS TABLET Y ESCRITORIO -->
+                <div class="googlemaps col-xs-12 col-md-6 col-lg-3 d-none d-sm-none d-md-block pb-3">
+                    <iframe title= "googlemaps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d716.0750846820422!2d-64.2267550992899!3d-31.379770365332444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298d884e5b5a9%3A0x363f7772622aec2a!2sVeterinaria%20Kanus!5e0!3m2!1ses-419!2sar!4v1675102431131!5m2!1ses-419!2sar"
+                        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="googlemapsImg"></iframe>
+                </div>
+                <!-- GOOGLE MAPS SMARTPHONE -->
+                <div class="googlemapsResponsive d-block d-sm-block d-md-none">
+                    <iframe title= "googlemaps"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d716.0750846820422!2d-64.2267550992899!3d-31.379770365332444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298d884e5b5a9%3A0x363f7772622aec2a!2sVeterinaria%20Kanus!5e0!3m2!1ses-419!2sar!4v1675102431131!5m2!1ses-419!2sar"
+                        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade" class="googlemapsImg"></iframe>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+    <!-- vinculacion iconos -->
+    <script src="https://kit.fontawesome.com/2bb5f709fe.js" crossorigin="anonymous"></script>
+    <!--vinculacion SweetAlert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
     <!-- vinculacion Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
