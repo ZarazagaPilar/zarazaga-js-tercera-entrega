@@ -13,7 +13,7 @@ body {
 .card {
   display: flex;
   align-items: center;
-  margin: 0.5rem;
+  margin: 0.3rem;
   text-align: center;
 }
 
@@ -31,6 +31,7 @@ body {
   font-size: 1rem;
 }
 
+
 h2 {
   margin: 1rem 0.5rem 0.5rem 1rem;
 }
@@ -45,7 +46,7 @@ h3 {
 }
 
 #login {
-  margin: 3rem 2rem 0.5rem 64rem;
+  margin: 1rem 2rem 2.5rem 64.5rem;
 }
 
 #resumenCarrito {
@@ -186,4 +187,3 @@ a {
   width: 100%;
   position: absolute;
 }
-

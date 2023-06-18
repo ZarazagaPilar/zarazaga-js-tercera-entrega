@@ -65,6 +65,42 @@ const apetil = new Producto(
   "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/2224.jpg&w=112&h=150&zc=1",
   2750
 );
+const ciprovet = new Producto(
+  9,
+  "Ciprovet",
+  "colirio",
+  "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/7434.jpg&w=188&h=250&zc=1",
+  1890
+);
+const geriox = new Producto(
+  10,
+  "Geriox",
+  "Condroprotector",
+  "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/5986.jpg&w=112&h=150&zc=1",
+  4350
+);
+const labyderms = new Producto(
+  11,
+  "Labyderms",
+  "Vitaminas Sopt On",
+  "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/7430.jpg&w=112&h=150&zc=1",
+  3477
+);
+const tau = new Producto(
+  12,
+  "Tau",
+  "Colirio",
+  "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/5993.jpg&w=112&h=150&zc=1",
+  1960
+);
+const pipetaLabyderms = new Producto(
+  13,
+  "Pipeta Labyderms",
+  "Antiparasitario Externo",
+  "https://www.sani.com.ar/usr/timthumb.php?src=https://www.sani.com.ar/productos/fotos/7427.jpg&w=112&h=150&zc=1",
+  1786
+);
+
 // Array de productos
 const productos = [
   serenex,
@@ -74,6 +110,11 @@ const productos = [
   basken,
   bactrovet,
   gelAntiplaca,
+  ciprovet,
+  geriox,
+  labyderms,
+  tau,
+  pipetaLabyderms,
 ];
 
 // Carrito vacío
@@ -185,7 +226,6 @@ const mostrarCarrito = () => {
   contenedorCarrito.appendChild(finalizarCompraBtn);
 
   finalizarCompraBtn.addEventListener("click", () => {
-
     // Productos del carrito y calculo del total de compra
     const productosEnCarrito = carrito.map(
       (producto) => `${producto.nombre} - Cantidad: ${producto.cantidad}`
@@ -197,18 +237,27 @@ const mostrarCarrito = () => {
     const listaProductos = productosEnCarrito
       .map((producto) => `<li>${producto}</li>`)
       .join("");
-    const mensaje = `<ul>${listaProductos}</ul>Total de compra: $${CompraFinalCarrito}`;
+    const mensaje = `<ul>${listaProductos}</ul>Total de su compra: $${CompraFinalCarrito}`;
 
     // Confirmación con SweetAlert
     Swal.fire({
       title: "Confirmar compra",
       html: mensaje,
       icon: "info",
-      buttons: ["Cancelar", "Confirmar"],
-    }).then((confirmado) => {
-      if (confirmado) {
+      showCancelButton: true,
+      confirmButtonText: "Confirmar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
         // Cuando se confirma la compra
-        Swal.fire("¡Gracias por su compra!", "", "success");
+        Swal.fire({
+          title: "¡Gracias por su compra!",
+          icon: "success",
+          confirmButtonText: "Salir",
+        });
+      } else {
+        // Cuando se cancela la compra
+        // No se muestra ningún mensaje adicional
       }
     });
   });
@@ -295,33 +344,45 @@ const calcularTotal = () => {
   total.innerHTML = `Total: $ ${totalCompra}`;
 };
 
-/*finalizar compra*/
+/****Buscador*****/
+const buscarProductos = () => {
+  const termino = document.getElementById("busqueda").value.toLowerCase();
+  const resultados = productos.filter(
+    (producto) =>
+      producto.nombre.toLowerCase().includes(termino) ||
+      producto.descripcion.toLowerCase().includes(termino)
+  );
 
-/************************************/
-//login
+  mostrarResultados(resultados);
+};
 
-const login = document.getElementById("login");
 
-const usuarioAutorizado = "admin";
-const passwordAutorizado = "1234";
+document.getElementById("busqueda").addEventListener("input", buscarProductos);
 
-login.addEventListener("click", () => {
-  Swal.fire({
-    title: "Inicio de sesion Veterinarios",
-    html: `<input type="text" id="usuario" class="swal2-input" placeholder="Usuario">
-            <input type="password" id="password" class="swal2-input" placeholder="Contraseña">`,
-    confirmButtonText: "Enviar",
-    showCancelButton: true,
-    cancelButtonText: "cancelar",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      let usuario = document.getElementById("usuario").value;
-      let password = document.getElementById("password").value;
-      if (usuario === usuarioAutorizado && password === passwordAutorizado) {
-        window.location.href = "login.html";
-      } else {
-        Swal.fire("Error", "Usuario o contraseña incorrectos", "error");
-      }
-    }
+const mostrarResultados = (resultados) => {
+  // Limpiar el contenedor de productos antes de mostrar los resultados
+  contenedorProductos.innerHTML = "";
+
+  resultados.forEach((producto) => {
+      const card = document.createElement("div");
+      card.classList.add("col-xl-3", "col-md-6", "col-xs-12");
+      card.innerHTML = `
+          <div class="card h-100">
+            <img class="card-img-top imgProductos" src="${producto.img}" alt="${producto.nombre}">
+            <div class="card-body">
+              <h2 class="card-title">${producto.nombre}</h2>
+              <h3 class="card-text">${producto.descripcion}</h3>
+              <p class="card-text"> Precio: $${producto.precio}</p>
+              <button class="btn btn-success botonCompras" id="boton ${producto.id}">Agregar al carrito</button>
+            </div>
+          </div>`;
+  
+    contenedorProductos.appendChild(card);
+        // Agregar al carrito
+    const boton = document.getElementById(`boton ${producto.id}`);
+    boton.addEventListener("click", () => {
+      agregarAlCarrito(producto.id);
+    });
   });
-});
+  
+};
