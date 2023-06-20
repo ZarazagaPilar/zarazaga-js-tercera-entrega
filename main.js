@@ -386,3 +386,62 @@ const mostrarResultados = (resultados) => {
   });
   
 };
+
+/***set interval colores *****/
+let coloresFondo = [
+  "rgb(232, 248, 245)", "rgb(232, 246, 243)", "rgb(233, 247, 239)", "rgb(234, 250, 241)", "rgb(244, 246, 246)",
+  "rgb(240, 248, 232)", "rgb(238, 245, 232)", "rgb(236, 247, 233)", "rgb(238, 250, 234)", "rgb(243, 246, 244)",
+  "rgb(255, 254, 211)", "rgb(255, 252, 208)", "rgb(255, 255, 204)", "rgb(255, 253, 201)", "rgb(255, 255, 198)",
+  "rgb(243, 243, 243)", "rgb(241, 241, 241)", "rgb(239, 239, 239)", "rgb(237, 237, 237)", "rgb(235, 235, 235)",
+  "rgb(220, 255, 190)", "rgb(225, 255, 195)", "rgb(230, 255, 200)", "rgb(235, 255, 205)", "rgb(240, 255, 210)",
+  "rgb(255, 250, 200)", "rgb(255, 245, 195)", "rgb(255, 240, 190)", "rgb(255, 235, 185)", "rgb(255, 230, 180)",
+  "rgb(204, 255, 255)", "rgb(207, 252, 255)", "rgb(210, 249, 255)", "rgb(213, 246, 255)", "rgb(216, 243, 255)",
+  "rgb(255, 220, 220)", "rgb(255, 215, 215)", "rgb(255, 210, 210)", "rgb(255, 205, 205)", "rgb(255, 200, 200)",
+  "rgb(228, 228, 255)", "rgb(224, 224, 255)", "rgb(220, 220, 255)", "rgb(216, 216, 255)", "rgb(212, 212, 255)",
+  "rgb(230, 230, 230)", "rgb(232, 232, 232)", "rgb(234, 234, 234)", "rgb(236, 236, 236)", "rgb(238, 238, 238)"
+];
+
+let i = 0;
+const intervalos = setInterval(() => {
+  document.querySelector('footer').style.backgroundColor = coloresFondo[i];
+  i++;
+  if (i == coloresFondo.length) {
+    clearInterval(intervalos);
+  }
+}, 2000);
+
+/*** fetch Api comentario clienetes*******/
+
+const apiUrl = "https://jsonplaceholder.typicode.com/comments";
+
+const apiComentarios = document.getElementById("apiComentarios");
+
+fetch(apiUrl)
+    .then(respuesta => respuesta.json())
+    .then(datos => {
+      console.log(datos);
+      mostrarComentarios(datos.slice(0, 9)); 
+    })
+    .catch(error => console.log(error));
+
+function mostrarComentarios(datos) {
+  let html = '<div class="grid-container">';
+  
+  datos.forEach((comentario, index) => {
+    html += `
+      <div class="card2">
+        <div class="card-body2">
+          <h2 class="fw-bold title2">${comentario.name}</h2>
+          <p>${comentario.body}</p>
+          <p>${comentario.email}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  html += '</div>';
+  
+  apiComentarios.innerHTML = html;
+}
+
+

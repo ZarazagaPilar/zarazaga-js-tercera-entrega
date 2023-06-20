@@ -46,9 +46,27 @@ h3 {
 }
 
 #login {
-  margin: 1rem 2rem 2.5rem 64.5rem;
+  margin: 0rem 0rem 0rem 64.5rem;
+  color:rgb(8, 7, 7);
+  background-color: rgb(158, 252, 7);
+
+  font-weight:400;
 }
 
+#login:hover {
+  background-color: rgb(211, 208, 208);
+}
+
+#nuevoUsuario {
+  margin: 1rem 2rem 2.5rem 0rem;
+  color:rgb(8, 7, 7);
+  background-color: rgb(255, 251, 5);
+
+  font-weight:400;
+}
+#nuevoUsuario:hover {
+  background-color: rgb(211, 208, 208);
+}
 #resumenCarrito {
   display: none;
 }
@@ -61,81 +79,19 @@ header {
   overflow-x: hidden;
 }
 
-.navbarHeader {
-  display: flex;
-  justify-content: space-between;
-}
-
 .logokanusPrincipal {
   background-color: rgb(255, 255, 255);
-  width: 90%;
+  width: 50%;
   height: auto;
-}
-
-.navbarleft {
-  display: flex;
-  text-align: right;
-}
-
-.listaNav {
-  display: flex;
-  list-style-type: none;
-  position: relative;
-}
-
-.navbar {
-  padding: 8px;
-  padding-left: 20px;
-  margin-right: 15px;
-}
-
-.navbarDes {
-  color: rgb(134, 134, 134);
-  font-size: 15px;
-  text-decoration: none;
   text-align: center;
-  font-weight: bold;
-}
-
-a {
-  text-decoration: none;
-}
-
-.navbar-toggler:focus {
-  box-shadow: none;
-}
-
-/* iconos Navbar */
-/*****************/
-.fa-solid {
-  color: rgb(134, 134, 134);
-  font-size: 160%;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-}
-.fa-solid:hover {
-  color: rgb(56, 55, 55);
-}
-
-.fa-cart-shopping {
-  margin-right: 15px;
-}
-
-.fa-user-doctor {
-  margin-right: 15px;
-}
-
-.fa-user-group {
-  margin-right: 10px;
+  align-items: center;
+  margin: 2rem 2rem 2.5rem 15rem;
 }
 
 /* FOOTER*/
 /*********/
 .fotterPrincipal {
   border-top: 1px solid #999999;
-  background-color: rgb(255, 255, 255);
   font-family: "Roboto", sans-serif;
   color: rgb(39, 38, 38);
   display: flex;
@@ -186,4 +142,55 @@ a {
   height: 100%;
   width: 100%;
   position: absolute;
+}
+/***login***/
+label {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: rgb(39, 38, 38);
+  margin: 0.5rem 0.5rem 0.5rem 1.2rem;
+  font-weight: 600;
+}
+#categoriaRaza{
+  font-family: "Roboto", sans-serif;
+  color: rgb(39, 38, 38);
+  margin: 0.5rem 0.5rem 0.5rem 0.5rem;
+  font-weight: 600;
+ }
+
+ .tamañoMascota {
+  font-family: "Roboto", sans-serif;
+  font-size: large;
+  color: rgb(39, 38, 38);
+  font-weight: 600;
+ }
+
+ /********fetch********/
+ .grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 10px;
+  margin-top: 1rem;
+}
+
+.tituloComentarios {
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: #2d6b2b;
+}
+.card2 {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+.title2 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card-body2 {
+  font-size: 1rem;
+  text-align: center;
 }

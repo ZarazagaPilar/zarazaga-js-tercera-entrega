@@ -18,66 +18,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container"></body>
+<body class="container">
 <!-- HEADER -->
 <header>
-    <nav class="navbar navbar-expand-lg navbarHeader">
-        <div class="container-fluid">
-            <!-- LOGO -->
-            <a class="navbar-brand" href="index.html" title="Kanus"><img src="./img/logo--blanco-letras.jpg"
-                    alt="Logo kanus" class="logokanusPrincipal img-fluid mx-auto"></a>
-            <button class="navbar-toggler ms-auto mt-2" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <!--  NAVBAR  -->
-            <div class="collapse navbar-collapse navbarleft" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0 listaNav">
-                    <li class="nav-item navbar">
-                        <a class="nav-link active" aria-current="page" href="index.html"><i
-                                class="fa-solid fa-house d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">INICIO</p>
-                        </a>
-                    </li>
-                    <li class="nav-item navbar">
-                        <a class="nav-link" href="html/nuestraclinica.html"><i
-                                class="fa-solid fa-hospital d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">CLÍNICA</p>
-                        </a>
-                    </li>
-                    <li class="nav-item navbar">
-                        <a class="nav-link" href="html/servicios.html"><i
-                                class="fa-solid fa-user-doctor d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">SERVICIOS</p>
-                        </a>
-                    </li>
-                    <li class="nav-item navbar">
-                        <a class="nav-link" href="html/compras.html"><i
-                                class="fa-solid fa-cart-shopping d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">COMPRAS</p>
-                        </a>
-                    </li>
-                    <li class="nav-item navbar">
-                        <a class="nav-link" href="html/blog.html"><i
-                                class="fa-solid fa-newspaper d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">BLOG</p>
-                        </a>
-                    </li>
-                    <li class="nav-item navbar">
-                        <a class="nav-link" href="html/contacto.html"><i
-                                class="fa-solid fa-user-group d-none d-sm-none d-md-none d-lg-block"></i>
-                            <p class="navbarDes">CONTACTO</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- LOGO -->
+    <a class="navbar-brand" href="index.html" title="Kanus"><img src="./img/logo--blanco-letras.jpg" alt="Logo kanus"
+            class="logokanusPrincipal"></a>
+    <button class="btn " id="login">Ingresar</button>
 </header>
 <!--Login-->
-<button class="btn btn-warning " id="login" >Ingresar</button>
-<button class="btn btn-warning " id="nuevoUsuario" >Nuevo usuario</button>
+
+<button class="btn" id="nuevoUsuario">Nuevo usuario</button>
 
 <!--Buscador-->
 <form class="d-flex" role="search">
@@ -97,7 +48,8 @@
 <button class="btn btn-danger" id="vaciarCarrito">Vaciar Carrito</button>
 <div id="contenedorCarrito" class="row"></div>
 <div id="resumenCarrito"></div>
-
+<h2 class="tituloComentarios">Comentarios de nuestos clientes</h2>
+<div id="apiComentarios"></div>
 <!--  FOOTER   -->
 <footer>
     <div class="fotterPrincipal conteiner fluid">
@@ -131,7 +83,7 @@
                 <iframe title="googlemaps"
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d716.0750846820422!2d-64.2267550992899!3d-31.379770365332444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943298d884e5b5a9%3A0x363f7772622aec2a!2sVeterinaria%20Kanus!5e0!3m2!1ses-419!2sar!4v1675102431131!5m2!1ses-419!2sar"
                     width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade" class="googlemapsImg border border-secondary" ></iframe>
+                    referrerpolicy="no-referrer-when-downgrade" class="googlemapsImg border border-secondary"></iframe>
             </div>
             <!-- GOOGLE MAPS SMARTPHONE -->
             <div class="googlemapsResponsive d-block d-sm-block d-md-none">
@@ -144,8 +96,6 @@
     </div>
 
 </footer>
-<!-- vinculacion iconos -->
-<script src="https://kit.fontawesome.com/2bb5f709fe.js" crossorigin="anonymous"></script>
 <!--vinculacion SweetAlert-->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>
 <!-- vinculacion Bootstrap -->
